@@ -1,5 +1,5 @@
 {
-  "name": "sobased-executor",
+  "name": "sobasedexecutor",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
