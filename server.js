@@ -1,5 +1,6 @@
 const express = require('express');
 const EventEmitter = require('events').EventEmitter;
+const path = require('path');
 
 const EVENT_NAME = "Execute";
 const REQUEST_TIMEOUT = 30000;
@@ -9,15 +10,17 @@ const executeEvent = new EventEmitter();
 
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname)));
+
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/executeRequest', (req, res) => {
   const code = req.body.code;
 
   if (!code) {
-    return res.sendStatus(500);
+    return res.sendStatus(400); 
   }
 
   executeEvent.emit(EVENT_NAME, code);
