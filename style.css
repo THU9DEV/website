@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0c0c0c; 
+    color: #fff; 
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    color: #00bfff;
+    text-shadow: 0 0 15px rgb(0, 34, 255); 
+}
+
+.container {
+    background: #1a1a1a; 
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); 
+    border-radius: 10px; 
+    width: 80%;
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+    border: none;
+    background-color: #00bfff; 
+    color: #fff; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+
+
+
+
+button:hover {
+    background-color: #0066cc; 
+    transform: scale(0.95);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+
+textarea {
+    background: #333; 
+    width: calc(100% - 24px); 
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 150px; 
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    outline: none; 
+    resize: vertical;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+textarea::placeholder {
+    color: #a6a6a6; 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+textarea:focus {
+    background: #444; 
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8); 
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #333; 
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #666; 
+    border-radius: 5px; 
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #888; 
+}
+
+
+.pageButtonContainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.pageButton {
+    background-color: #212121;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+}
+
+.pageButton:hover {
+        background-color: #777; 
+        transform: scale(0.95);    
+}
+
+.pageButton:active {
+    transform: scale(0.9);    
+}
+
+.white-icon {
+    filter: invert(100%);
+    size: auto;
+}
+
+

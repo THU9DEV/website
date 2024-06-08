@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobased Executor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pageButtonContainer">
+        <button id="executePageButton" class="pageButton">
+            <img src="dice-d6.png" width="16" height="16" class="white-icon">
+        </button>
+        
+        <button id="selectGamePageButton" class="pageButton">
+            <img src="joystick.png" width="16" height="16" class="white-icon">
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>Sobased Executor</h1>
+        <textarea id="inputBox" name="inputBox" placeholder="Enter your script here..." rows="5"></textarea>
+        <div class="buttons">
+            <button id="executeButton">Execute</button>
+            <button id="clearButton">Clear</button>
+            <button id="REButton">RE</button>
+            <button id="R6Button">R6</button>
+        </div>
+    </div>
+
+    <script>
+        async function clearEditor() {
+            document.getElementById('inputBox').value = '';
+        }
+
+        async function sendExecuteRequest() {
+            const url = "/executeRequest";
+            const codeInput = document.getElementById('inputBox').value;
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: codeInput })
+            });
+
+            if (response.status === 200) {
+                console.log('Code sent successfully');
+            } else {
+                console.error('Failed to send code');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('clearButton').addEventListener('click', clearEditor);
+            document.getElementById('executeButton').addEventListener('click', sendExecuteRequest);
+        });
+    </script>
+</body>
+</html>
